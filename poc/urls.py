@@ -19,11 +19,12 @@ from django.urls import path, include, re_path
 import djangosaml2.urls
 
 
-
+username_regex = r'[a-zA-Z0-9_]+'
 urlpatterns = [
     re_path(r'^saml2/', include('djangosaml2.urls')),
     #path('admin/', admin.site.urls),
     path('uvu/',include('uvu.urls')),
+#    path('account/profile')
 ]
 
 

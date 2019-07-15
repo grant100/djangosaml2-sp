@@ -125,18 +125,18 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# ******
+# ****** SAML2 Configuration ********
 
 LOGIN_URL = '/saml2/login/'
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 SESSION_COOKIE_SAMESITE=None
 
-import saml2
 from os import path
 import saml2.saml
 
 SAML_LOGOUT_REQUEST_PREFERRED_BINDING = saml2.BINDING_HTTP_POST
 
+LOGIN_REDIRECT_URL = '/uvu'
 
 BASEDIR = path.dirname(path.abspath(__file__))
 SAML_CONFIG = {

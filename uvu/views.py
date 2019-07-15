@@ -1,6 +1,7 @@
-from django.shortcuts import render
+#from django.shortcuts import render
 from django.http import HttpResponse
 
 def index(request):
-    return HttpResponse("UVU")
-# Create your views here.
+    if( not request.user.is_authenticated):
+        return HttpResponse("Not Authenticated")
+    return HttpResponse(request.user.username)
